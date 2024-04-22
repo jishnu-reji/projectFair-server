@@ -11,6 +11,8 @@ const pfServer = express()
 pfServer.use(cors())
 pfServer.use(express.json())
 pfServer.use(router)
+//to access any files in server by another app make it static
+pfServer.use('/uploads',express.static('./uploads'))
 
 const PORT = 3000 || process.env.PORT
 
